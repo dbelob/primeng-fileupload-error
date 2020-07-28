@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,11 @@ import { Component } from '@angular/core';
 export class AppComponent {
   uploadedFiles: any[] = [];
 
+  constructor(translate: TranslateService) {
+    translate.setDefaultLang('en');
+    translate.use('en');
+  }
+
   onUpload(event) {
     for (const file of event.files) {
       this.uploadedFiles.push(file);
@@ -15,6 +21,4 @@ export class AppComponent {
 
     console.log(JSON.stringify({severity: 'info', summary: 'Success', detail: 'File Uploaded'}));
   }
-
-  // TODO: implement
 }

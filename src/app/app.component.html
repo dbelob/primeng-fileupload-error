@@ -15,3 +15,11 @@
               uploadLabel="Custom Upload"
               cancelLabel="Custom Cancel">
 </p-fileUpload>
+
+<h3>Advanced (custom labels by @ngx-translate)</h3>
+<p-fileUpload name="demo[]" url="./upload.php" (onUpload)="onUpload($event)"
+              multiple="multiple" accept="image/*" maxFileSize="1000000"
+              chooseLabel="{{'ui.uploadChooseLabel' | translate}}"
+              uploadLabel="{{'ui.uploadUploadLabel' | translate}}"
+              cancelLabel="{{'ui.uploadCancelLabel' | translate}}">
+</p-fileUpload>
