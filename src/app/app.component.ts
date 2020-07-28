@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'primeng-fileupload-error';
+  uploadedFiles: any[] = [];
+
+  onUpload(event) {
+    for (const file of event.files) {
+      this.uploadedFiles.push(file);
+    }
+
+    console.log(JSON.stringify({severity: 'info', summary: 'Success', detail: 'File Uploaded'}));
+  }
+
+  // TODO: implement
 }
